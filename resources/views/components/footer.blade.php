@@ -69,15 +69,13 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="copyright-text">
-                        <P>&copy; 2023 <span style="color:#63AC45;">Vidhak</span>, All Rights Reserved</P>
+                        <P>&copy; 2023, All Rights Reserved</P>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="copyright-nav float-lg-end">
                         <ul>
-                            <li><a href="#">Setting & Privacy</a></li>
-                            <li><a href="#">Faqs</a></li>
-                            <li><a href="#">Food Menu</a></li>
+                            <li>Made by <a href="https://tursunov.me" target="_blank">Azizbek</a></li>
                         </ul>
                     </div>
                 </div>

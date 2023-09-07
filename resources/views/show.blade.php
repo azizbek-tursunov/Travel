@@ -98,10 +98,7 @@
                             </div>
                         </div>
                     </div>
-                
-        
-        
-    @endif
+        @endif
 
                 <div class="col-xl-4 col-lg-5">
                     <div class="sidebar-widget-area pl-lg-40">

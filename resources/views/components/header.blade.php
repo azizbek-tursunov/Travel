@@ -19,51 +19,33 @@
                     <!--=== Main Menu ===-->
                     <nav class="main-menu">
                         <ul>
-                            <li class="menu-item has-children"><a href="#">Home</a>
+                            <li class="menu-item has-children">
+                                <a href="{{ route('home') }}">Bosh sahifa</a>
+                            </li>
+                            <li class="menu-item has-children">
+                                <a href="{{ route('tours') }}">Tur paketlar</a>
+                            </li>
+                            <li class="menu-item has-children"><a href="#">Yo'nalishlar</a>
                                 <ul class="sub-menu">
-                                    <li><a href="index.html">Home 01</a></li>
-                                    <li><a href="index-2.html">Home 02</a></li>
-                                    <li><a href="index-3.html">Home 03</a></li>
+                                    <li><a href="#">Xalqaro</a></li>
+                                    <li><a href="#">Ichki turizm</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-item has-children"><a href="#">Accommodation</a>
-                                <ul class="sub-menu">
-                                    <li><a href="accommodation-grid.html">ACD Grid</a></li>
-                                    <li><a href="accommodation-standard.html">ACD Standard</a></li>
-                                    <li><a href="accommodation-slider.html">ACD Slider</a></li>
-                                    <li><a href="accommodation-details.html">ACD Details</a></li>
-                                </ul>
+                            <li class="menu-item has-children">
+                                <a href="{{ route('hotels') }}">Mehmonxonalar</a>
                             </li>
-                            <li class="menu-item has-children"><a href="#">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog-standard.html">Blog Standard</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item has-children"><a href="#">Pages</a>
-                                <ul class="sub-menu">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="gallery.html">Our Gallery</a></li>
-                                    <li><a href="faq.html">Faq</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item"><a href="contact.html">Contact</a></li>
-                            <li class="menu-item"><a class="search-btn" href="#" data-bs-toggle="modal" data-bs-target="#search-modal"><i class="far fa-search"></i></a></li>
+                            <li class="menu-item"><a href="{{ route('contact') }}">Aloqa</a></li>
                         </ul>
                     </nav>
-                    <!--=== Nav Button ===-->
-                    <div class="menu-button mt-40 d-xl-none">
-                        <a href="contact.html" class="main-btn btn-green">Book now<i class="far fa-angle-double-right"></i></a>
-                    </div>
                 </div>
                 <!--=== Nav right Item ===-->
                 <div class="nav-right-item d-flex align-items-center">
                     <div class="menu-button d-xl-block d-none">
-                        <a href="contact.html" class="main-btn btn-green">Book now<i class="far fa-angle-double-right"></i></a>
+                        <a href="{{ route('contact') }}" class="main-btn btn-green">Biz bilan bog'laning<i class="far fa-angle-double-right"></i></a>
                     </div>
                     <div class="lang-dropdown">
                         <select class="wide">
-                            <option value="English">English</option>
+                            <option value="English">O'zbek</option>
                             <option value="English">English</option>
                         </select>
                     </div>

@@ -75,16 +75,6 @@
                 </div>
                 <div class="col-xl-4 col-lg-5">
                     <div class="sidebar-widget-area pl-lg-40">
-                        <!--=== Search Widget ===-->
-                        <div class="sidebar-widget search-widget mb-30 wow fadeInUp">
-                            <h5 class="widget-title">Search</h5>
-                            <form>
-                                <div class="form_group">
-                                    <label><i class="far fa-search"></i></label>
-                                    <input type="text" class="form_control" placeholder="Search" name="search" required>
-                                </div>
-                            </form>
-                        </div>
                         @if(isset($destinations))
                             <!--=== Category Widget ===-->
                             <div class="sidebar-widget category-widget mb-30 wow fadeInUp">
@@ -100,65 +90,6 @@
                                 </ul>
                             </div>
                         @endif
-
-                        <!--=== Recent Post Widget ===-->
-                        <div class="sidebar-widget recent-post-widget mb-40 wow fadeInUp">
-                            <h5 class="widget-title">Recent News</h5>
-                            <ul class="recent-post-list">
-                                <li class="post-thumbnail-content">
-                                    <img src="assets/images/blog/post-thumb-1.jpg" alt="post thumb">
-                                    <div class="post-title-date">
-                                        <h5><a href="blog-details.html">Web Quality Assurance
-                                                Requirements To Web
-                                                Dev Risk Manage</a></h5>
-                                        <span class="posted-on"><i class="far fa-calendar-alt"></i><a href="#">Sep 18, 20222</a></span>
-                                    </div>
-                                </li>
-                                <li class="post-thumbnail-content">
-                                    <img src="assets/images/blog/post-thumb-2.jpg" alt="post thumb">
-                                    <div class="post-title-date">
-                                        <h5><a href="blog-details.html">Deep Dive Into Wonder
-                                                World Of Displaements
-                                                Filtering</a></h5>
-                                        <span class="posted-on"><i class="far fa-calendar-alt"></i><a href="#">Sep 18, 2022</a></span>
-                                    </div>
-                                </li>
-                                <li class="post-thumbnail-content">
-                                    <img src="assets/images/blog/post-thumb-3.jpg" alt="post thumb">
-                                    <div class="post-title-date">
-                                        <h5><a href="blog-details.html">Handling Mountin And mountin Of Navigation
-                                                Routes In Native</a></h5>
-                                        <span class="posted-on"><i class="far fa-calendar-alt"></i><a href="#">Sep 18, 2022</a></span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--=== Banner Widget ===-->
-                        <div class="sidebar-banner-widget wow fadeInUp mb-40">
-                            <div class="banner-widget-content">
-                                <div class="banner-img">
-                                    <img src="assets/images/blog/banner-1.jpg" alt="Post Banner">
-                                    <div class="hover-overlay">
-                                        <div class="hover-content">
-                                            <h4 class="title"><a href="#">Luxury Cauple
-                                                    Cabin</a></h4>
-                                            <span class="price"><span class="currency">$</span>193</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--=== Tag Widget ===-->
-                        <div class="sidebar-widget tag-cloud-widget mb-40 wow fadeInUp">
-                            <h5 class="widget-title">Products Tags</h5>
-                            <a href="#">Camping</a>
-                            <a href="#">Tent Camp</a>
-                            <a href="#">Wild</a>
-                            <a href="#">Campfire</a>
-                            <a href="#">Luxury Cabin</a>
-                            <a href="#">Safari Tent</a>
-                            <a href="#">House Tree</a>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -22,7 +22,6 @@
                 <div class="col-xl-7 col-lg-12">
                     <div class="contact-content-box mb-50">
                         <div class="section-title mb-45 wow fadeInUp">
-                            <span class="sub-title"><span class="number">01</span>Contact Us</span>
                             <h2>Ready to Travel Us <span class="thin">for Better Adventure</span></h2>
                         </div>
                         <div class="row">
@@ -82,7 +81,8 @@
                         <h3 class="title">Send Us Message</h3>
                         <p>Adipiscing magna varius imperdiet scelerisque
                             suspendisse amet sed ridiculus turpis.</p>
-                        <form class="contact-form">
+                        <form action="{{ route('contact.store') }}" class="contact-form" method="POST">
+                            @csrf
                             <div class="form_group">
                                 <input type="text" class="form_control" placeholder="Full Name" name="name" required>
                             </div>
