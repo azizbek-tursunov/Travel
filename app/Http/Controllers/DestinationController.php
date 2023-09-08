@@ -10,7 +10,7 @@ class DestinationController extends Controller
 {
     public function showByDestination(Destination $destination)
     {
-        $destinations = Destination::where('lang', App::getLocale())->get();
+        $destinations = Destination::all();
         $tours = $destination->tours()->paginate(10); // paginate with 10 items per page
 
         return view('index', compact('tours', 'destinations'));

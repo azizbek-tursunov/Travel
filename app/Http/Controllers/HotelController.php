@@ -11,7 +11,7 @@ class HotelController extends Controller
 {
     public function index()
     {
-        $hotels = Hotel::where('lang', App::getLocale())->paginate(10);
+        $hotels = Hotel::paginate(10);
 
         return view('index', compact('hotels'));
     }
@@ -19,7 +19,7 @@ class HotelController extends Controller
     public function show(Hotel $hotel)
     {
 
-        $destinations = Destination::where('lang', App::getLocale())->get();
+        $destinations = Destination::all();
 
         return view('show', compact('hotel', 'destinations'));
     }

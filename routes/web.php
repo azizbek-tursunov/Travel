@@ -34,3 +34,5 @@ Route::get('hotels', [HotelController::class, 'index'])->name('hotels');
 Route::get('hotels/{hotel}', [HotelController::class, 'show'])->name('showHotel');
 
 Route::post('/order', [OrderController::class, 'store'])->name('order');
+
+Route::get('lang/change', [\App\Http\Controllers\LangController::class, 'change'])->name('changeLang');

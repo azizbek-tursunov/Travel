@@ -11,11 +11,6 @@ class TourController extends Controller
 {
     public function index()
     {
-
-        // $tours = Tour::where('lang', App::getLocale())->paginate(10);
-        
-        // $destinations = Destination::where('lang', App::getLocale())->get();
-
         $tours = Tour::paginate(10);
         $destinations = Destination::all();
 
@@ -25,7 +20,7 @@ class TourController extends Controller
     public function show(Tour $tour)
     {
 
-        $destinations = Destination::where('lang', App::getLocale())->get();
+        $destinations = Destination::all();
 
         return view('show', compact('tour', 'destinations'));
     }

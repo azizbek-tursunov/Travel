@@ -5,16 +5,15 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget about-company-widget mb-40">
-                        <a href="index.html" class="footer-logo"><img src="assets/images/logo/logo-black.png" alt="Brand Logo"></a>
-                        <p>Sit amet consectetur adipiscinelit
-                            Sem et aliquam enimdeassa ornare
-                            vulputate neque feugiat secursun
-                            blandit volutpat hendr mauris</p>
+                        <a href="index.html" class="footer-logo"><img src="assets/images/logo/logo-black.png"
+                                                                      alt="Brand Logo"></a>
+                        <p>
+                            {!! $footer->about_uz !!}
+                        </p>
                         <ul class="social-link">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            @foreach($footer->social as $data)
+                                <li><a href="{{ $data['url'] }}"><i class="fab fa-{{ $data['name'] }}"></i></a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -42,7 +41,9 @@
                             <form>
                                 <div class="form_group">
                                     <input type="email" class="form_control" placeholder="Email Address" required>
-                                    <label><button><i class="far fa-arrow-right"></i></button></label>
+                                    <label>
+                                        <button><i class="far fa-arrow-right"></i></button>
+                                    </label>
                                 </div>
                             </form>
                         </div>
@@ -51,14 +52,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget contact-info-widget pl-lg-100 mb-40">
                         <div class="contact-info-box mb-35">
-                            <h4 class="title">Location</h4>
-                            <p><i class="far fa-map-marker-alt"></i><span>119 Tanglewood Lane
-                                Gulfport, MS 39503</span></p>
-                        </div>
-                        <div class="contact-info-box mb-35">
-                            <h4 class="title">Contact</h4>
-                            <p><i class="far fa-envelope"></i><a href="mailto:support@gmail.com">support@gmail.com</a></p>
-                            <p><i class="far fa-phone"></i><a href="tel:+000(123)4566">+000 (123) 45 66</a></p>
+                            {!! $footer->contact_uz !!}
                         </div>
                     </div>
                 </div>
