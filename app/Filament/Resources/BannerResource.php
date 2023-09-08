@@ -41,6 +41,9 @@ class BannerResource extends Resource
                 Forms\Components\FileUpload::make('image_en')
                     ->image()
                     ->required(),
+                Forms\Components\FileUpload::make('banner_image')
+                    ->image()
+                    ->required(),
             ]);
     }
 
@@ -82,11 +85,11 @@ class BannerResource extends Resource
                 Tables\Actions\CreateAction::make(),
             ]);
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ManageBanners::route('/'),
         ];
-    }    
+    }
 }

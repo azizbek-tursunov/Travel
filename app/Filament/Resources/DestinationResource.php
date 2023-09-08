@@ -60,6 +60,12 @@ class DestinationResource extends Resource
                                 Forms\Components\FileUpload::make('image_en')
                                     ->image(),
                             ]),
+                        Tabs\Tab::make('Image')
+                            ->schema([
+                                Forms\Components\FileUpload::make('banner_image')
+                                    ->image()
+                                    ->required(),
+                            ]),
                     ])->columnSpanFull(),
             ]);
     }

@@ -23,6 +23,7 @@ class Tour extends Model
         'direction_en',
         'image_en',
         'price',
+        'banner_image'
     ];
 
     public function destinations()

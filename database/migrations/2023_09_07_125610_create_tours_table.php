@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+//        TODO: hammasiga banner image qo'shib chiqamiz
         Schema::create('tours', function (Blueprint $table) {
             $table->id();
             $table->string('name_uz');
@@ -26,6 +27,7 @@ return new class extends Migration
             $table->string('direction_en')->nullable();
             $table->string('image_en')->nullable();
             $table->bigInteger('price');
+            $table->string('banner_image');
             $table->timestamps();
         });
     }

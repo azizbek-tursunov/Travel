@@ -18,5 +18,6 @@ class Hotel extends Model
         'description_en',
         'image',
         'link',
+        'banner_image'
     ];
 }

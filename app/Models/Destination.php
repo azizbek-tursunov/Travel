@@ -19,6 +19,7 @@ class Destination extends Model
         'image_uz',
         'image_ru',
         'image_en',
+        'banner_image'
     ];
 
     public function tours()

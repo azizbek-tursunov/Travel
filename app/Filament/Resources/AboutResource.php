@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\HotelResource\Pages;
-use App\Filament\Resources\HotelResource\RelationManagers;
-use App\Models\Hotel;
+use App\Filament\Resources\AboutResource\Pages;
+use App\Filament\Resources\AboutResource\RelationManagers;
+use App\Models\About;
 use Filament\Forms;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Form;
@@ -14,9 +14,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class HotelResource extends Resource
+class AboutResource extends Resource
 {
-    protected static ?string $model = Hotel::class;
+    protected static ?string $model = About::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -28,43 +28,61 @@ class HotelResource extends Resource
                     ->tabs([
                         Tabs\Tab::make('O\'zbekcha')
                             ->schema([
-                                Forms\Components\TextInput::make('name_uz')
+                                Forms\Components\TextInput::make('title_uz')
                                     ->required()
                                     ->maxLength(255),
-                                Forms\Components\Textarea::make('description_uz')
+                                Forms\Components\RichEditor::make('description_uz')
+                                    ->required()
+                                    ->maxLength(65535)
+                                    ->columnSpanFull(),
+                                Forms\Components\TextInput::make('title2_uz')
+                                    ->required()
+                                    ->maxLength(255),
+                                Forms\Components\RichEditor::make('description2_uz')
                                     ->required()
                                     ->maxLength(65535)
                                     ->columnSpanFull(),
                             ]),
                         Tabs\Tab::make('Русский')
                             ->schema([
-                                Forms\Components\TextInput::make('name_ru')
+                                Forms\Components\TextInput::make('title_ru')
                                     ->required()
                                     ->maxLength(255),
-                                Forms\Components\Textarea::make('description_ru')
+                                Forms\Components\RichEditor::make('description_ru')
+                                    ->required()
+                                    ->maxLength(65535)
+                                    ->columnSpanFull(),
+                                Forms\Components\TextInput::make('title2_ru')
+                                    ->required()
+                                    ->maxLength(255),
+                                Forms\Components\RichEditor::make('description2_ru')
                                     ->required()
                                     ->maxLength(65535)
                                     ->columnSpanFull(),
                             ]),
                         Tabs\Tab::make('English')
                             ->schema([
-                                Forms\Components\TextInput::make('name_en')
+                                Forms\Components\TextInput::make('title_en')
                                     ->maxLength(255),
-                                Forms\Components\Textarea::make('description_en')
+                                Forms\Components\RichEditor::make('description_en')
+                                    ->maxLength(65535)
+                                    ->columnSpanFull(),
+                                Forms\Components\TextInput::make('title2_en')
+                                    ->maxLength(255),
+                                Forms\Components\RichEditor::make('description2_en')
                                     ->maxLength(65535)
                                     ->columnSpanFull(),
                             ]),
-                        Tabs\Tab::make('Image')
+                        Tabs\Tab::make('Images')
                             ->schema([
                                 Forms\Components\FileUpload::make('banner_image')
                                     ->image()
                                     ->required(),
+                                Forms\Components\FileUpload::make('image')
+                                    ->image()
+                                    ->required(),
                             ]),
-                    ]),
-                Forms\Components\FileUpload::make('image')
-                    ->image(),
-                Forms\Components\TextInput::make('link')
-                    ->maxLength(255),
+                    ])->columnSpanFull(),
             ]);
     }
 
@@ -72,15 +90,19 @@ class HotelResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name_uz')
+                Tables\Columns\TextColumn::make('title_uz')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('name_ru')
+                Tables\Columns\TextColumn::make('title2_uz')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('name_en')
+                Tables\Columns\TextColumn::make('title_ru')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('link')
+                Tables\Columns\TextColumn::make('title2_ru')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('title_en')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('title2_en')
+                    ->searchable(),
+                Tables\Columns\ImageColumn::make('banner_image'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -95,7 +117,6 @@ class HotelResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -107,10 +128,19 @@ class HotelResource extends Resource
             ]);
     }
 
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageHotels::route('/'),
+            'index' => Pages\ListAbouts::route('/'),
+            'create' => Pages\CreateAbout::route('/create'),
+            'edit' => Pages\EditAbout::route('/{record}/edit'),
         ];
     }
 }

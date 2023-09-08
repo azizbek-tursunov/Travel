@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('image_ru');
             $table->string('title_en');
             $table->string('image_en');
+            $table->string('banner_image');
             $table->timestamps();
         });
     }
