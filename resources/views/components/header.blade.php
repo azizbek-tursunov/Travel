@@ -37,7 +37,7 @@
                             <li class="menu-item has-children">
                                 <a href="{{ route('hotels') }}">{{ __('layout.hotels') }}</a>
                             </li>
-                            <li class="menu-item"><a href="{{ route('contact') }}">{{ __('layout.contact') }}</a></li>
+                            <li class="menu-item"><a href="{{ route('about-us') }}">{{ __('layout.about') }}</a></li>
                         </ul>
                     </nav>
                 </div>

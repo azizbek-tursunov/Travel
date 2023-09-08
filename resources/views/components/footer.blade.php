@@ -8,7 +8,7 @@
                         <a href="index.html" class="footer-logo"><img src="assets/images/logo/logo-black.png"
                                                                       alt="Brand Logo"></a>
                         <p>
-                            {!! $footer->about_uz !!}
+                            {!! $footer->{'about_' . app()->getLocale()} !!}
                         </p>
                         <ul class="social-link">
                             @foreach($footer->social as $data)
@@ -52,7 +52,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget contact-info-widget pl-lg-100 mb-40">
                         <div class="contact-info-box mb-35">
-                            {!! $footer->contact_uz !!}
+                            {!! $footer->{'contact_' . app()->getLocale()} !!}
                         </div>
                     </div>
                 </div>

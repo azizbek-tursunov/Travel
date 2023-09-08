@@ -31,13 +31,13 @@ class TourResource extends Resource
                                 Forms\Components\TextInput::make('name_uz')
                                     ->required()
                                     ->maxLength(255),
-                                Forms\Components\Textarea::make('description_uz')
-                                    ->required()
-                                    ->maxLength(65535)
-                                    ->columnSpanFull(),
                                 Forms\Components\TextInput::make('direction_uz')
                                     ->required()
                                     ->maxLength(255),
+                                Forms\Components\RichEditor::make('description_uz')
+                                    ->required()
+                                    ->maxLength(65535)
+                                    ->columnSpanFull(),
                                 Forms\Components\TextInput::make('price')
                                     ->required()
                                     ->numeric()
@@ -51,13 +51,13 @@ class TourResource extends Resource
                                 Forms\Components\TextInput::make('name_ru')
                                     ->required()
                                     ->maxLength(255),
-                                Forms\Components\Textarea::make('description_ru')
-                                    ->required()
-                                    ->maxLength(65535)
-                                    ->columnSpanFull(),
                                 Forms\Components\TextInput::make('direction_ru')
                                     ->required()
                                     ->maxLength(255),
+                                Forms\Components\RichEditor::make('description_ru')
+                                    ->required()
+                                    ->maxLength(65535)
+                                    ->columnSpanFull(),
                                 Forms\Components\FileUpload::make('image_ru')
                                     ->image()
                                     ->required(),
@@ -66,11 +66,11 @@ class TourResource extends Resource
                             ->schema([
                                 Forms\Components\TextInput::make('name_en')
                                     ->maxLength(255),
-                                Forms\Components\Textarea::make('description_en')
-                                    ->maxLength(65535)
-                                    ->columnSpanFull(),
                                 Forms\Components\TextInput::make('direction_en')
                                     ->maxLength(255),
+                                Forms\Components\RichEditor::make('description_en')
+                                    ->maxLength(65535)
+                                    ->columnSpanFull(),
                                 Forms\Components\FileUpload::make('image_en')
                                     ->image(),
                             ]),

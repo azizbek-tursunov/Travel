@@ -6,11 +6,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="page-banner-content text-center text-white">
-                        <h1 class="page-title">Blog Standard</h1>
-                        <ul class="breadcrumb-link text-white">
-                            <li><a href="index.html">Home</a></li>
-                            <li class="active">Blog Standard</li>
-                        </ul>
+                        <h2 class="page-title">Biz bilan sayohat qiling</h2>
                     </div>
                 </div>
             </div>
@@ -26,18 +22,19 @@
                             @foreach($tours as $tour)
                                 <div class="blog-standard-post-item mb-50 wow fadeInUp">
                                     <div class="post-thumbnail">
-                                        <img src="/storage/{{ $tour->image }}" alt="Post Image">
+                                        <img src="/storage/{{ $tour->{'image_'.app()->getLocale()} }}" alt="Post Image">
                                     </div>
                                     <div class="entry-content">
-                                        <div class="post-meta">
-                                            <ul>
-                                                <li><span><a href="#"><i
-                                                                class="far fa-calendar-alt"></i> November 23,2022</a></span>
-                                                </li>
-                                            </ul>
-                                        </div>
+{{--                                        <div class="post-meta">--}}
+{{--                                            <ul>--}}
+{{--                                                <li><span><a href="#"><i--}}
+{{--                                                                class="far fa-calendar-alt"></i> November 23,2022</a></span>--}}
+{{--                                                </li>--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                        TODO: shu yerga ozgina descriptiondan chiqarib qo'yish kerak   --}}
                                         <h3 class="title"><a
-                                                href="{{ route('showTour', ['tour' => $tour->id]) }}">{{ $tour->direction }}</a>
+                                                href="{{ route('showTour', ['tour' => $tour->id]) }}">{{ $tour->{'direction_'.app()->getLocale()} }}</a>
                                         </h3>
                                         <a href="{{ route('showTour', ['tour' => $tour->id]) }}" class="btn-link">ko'proq
                                             malumot olish<i class="far fa-angle-double-right"></i></a>
@@ -50,21 +47,15 @@
                             @foreach($hotels as $hotel)
                                 <div class="blog-standard-post-item mb-50 wow fadeInUp">
                                     <div class="post-thumbnail">
-                                        <img src="/storage/{{ $hotel->image }}" alt="Post Image">
+                                        <img src="/storage/{{ $hotel->image }}" alt="Hotel Image">
                                     </div>
                                     <div class="entry-content">
-                                        <div class="post-meta">
-                                            <ul>
-                                                <li><span><a href="#"><i
-                                                                class="far fa-calendar-alt"></i> November 23,2022</a></span>
-                                                </li>
-                                            </ul>
-                                        </div>
                                         <h3 class="title"><a
-                                                href="{{ route('showHotel', ['hotel' => $hotel->id]) }}">{{ $hotel->name }}</a>
+                                                href="{{ route('showHotel', ['hotel' => $hotel->id]) }}">{{ $hotel->{'name_'.app()->getLocale()} }}</a>
                                         </h3>
-                                        <a href="{{ route('showHotel', ['hotel' => $hotel->id]) }}" class="btn-link">ko'proq
-                                            malumot olish<i class="far fa-angle-double-right"></i></a>
+                                        <a href="{{ route('showHotel', ['hotel' => $hotel->id]) }}" class="btn-link">
+                                            ko'proq malumot olish<i class="far fa-angle-double-right"></i>
+                                        </a>
                                     </div>
                                 </div>
                             @endforeach
@@ -83,7 +74,7 @@
 
                                     @foreach($destinations as $destination)
                                         <li>
-                                            <a href="{{ route('showByDestination', ['destination' => $destination->id]) }}  ">{{ $destination->name }}
+                                            <a href="{{ route('showByDestination', ['destination' => $destination->id]) }}  ">{{ $destination->{'name_'.app()->getLocale()} }}
                                                 <i class="far fa-arrow-right"></i></a></li>
                                     @endforeach
 

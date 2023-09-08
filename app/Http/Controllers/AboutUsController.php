@@ -8,6 +8,8 @@ class AboutUsController extends Controller
 {
     public function aboutUs()
     {
-        return view('about-us');
+        $partners = \App\Models\Partner::all();
+
+        return view('about-us', compact('partners'));
     }
 }

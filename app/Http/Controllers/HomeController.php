@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use App\Models\Destination;
-use Illuminate\Http\Request;
+use App\Models\Tour;
 
 class HomeController extends Controller
 {
     public function home()
     {
-        return view('home');
+        $banners = Banner::all();
+        $destinations = Destination::take(3)->get();
+        $tours = Tour::take(4)->get();
+
+        return view('home', compact('banners', 'destinations', 'tours'));
     }
 }

@@ -7,5 +7,5 @@ return [
     'tours' => 'Tur paketlar',
     'destinations' => 'Yo\'nalishlar',
     'hotels' => 'Mehmonxonalar',
-    'contact_us' => 'Biz bilan bog\'laning',
+    'contact_us' => 'Bo\'glanish',
 ];

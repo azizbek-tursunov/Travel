@@ -7,5 +7,5 @@ return [
     'tours' => 'Tours',
     'destinations' => 'Destinations',
     'hotels' => 'Hotels',
-    'contact_us' => 'Contact us',
+    'contact_us' => 'Contact',
 ];
