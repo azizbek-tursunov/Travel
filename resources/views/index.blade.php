@@ -1,7 +1,7 @@
 <x-layout>
     <!--====== Start Breadcrumb Section ======-->
     <section class="page-banner light-red-bg pt-170 pb-170 bg_cover"
-             style="background-image: url(assets/images/bg/page-bg-1.jpg);">
+             style="background-image: url(/assets/images/bg/index.jpeg);">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">

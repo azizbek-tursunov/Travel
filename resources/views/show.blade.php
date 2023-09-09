@@ -2,12 +2,12 @@
     @if(isset($tour))
         <!--====== Start Breadcrumb Section ======-->
         <section class="page-banner light-red-bg pt-170 pb-170 bg_cover"
-                 style="background-image: url(/assets/images/bg/page-bg-1.jpg);">
+                 style="background-image: url(/storage/{{ $tour->banner_image }});">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="page-banner-content text-center text-white">
-                            <h1 class="page-title">{{ $tour->name }}</h1>
+                            <h2 class="page-title">{{ $tour->{'name_'.app()->getLocale()} }}</h2>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,8 @@
                                         <div class="col-lg-12">
                                             <div class="form_group">
                                                 <select name="tour_id" class="form_control">
-                                                    <option value="{{ $tour->id }}" selected>{{ $tour->{'name_'.app()->getLocale()} }}</option>
+                                                    <option value="{{ $tour->id }}"
+                                                            selected>{{ $tour->{'name_'.app()->getLocale()} }}</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -80,13 +81,13 @@
                     @elseif(isset($hotel))
                         <!--====== Start Breadcrumb Section ======-->
                         <section class="page-banner light-red-bg pt-170 pb-170 bg_cover"
-                                 style="background-image: url(/assets/images/bg/page-bg-1.jpg);">
+                                 style="background-image: url(/storage/{{ $hotel->banner_image }});">
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-10">
-{{--                                        <div class="page-banner-content text-center text-white">--}}
-{{--                                            <h1 class="page-title">{{ $hotel->{'name_'.app()->getLocale()} }}</h1>--}}
-{{--                                        </div>--}}
+                                        <div class="page-banner-content text-center text-white">
+                                            <h2 class="page-title">{{ $hotel->{'name_'.app()->getLocale()} }}</h2>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -98,8 +99,15 @@
                                     <div class="col-xl-8 col-lg-7">
                                         <div class="blog-details-wrapper">
                                             <div class="blog-post mb-60 wow fadeInUp">
+                                                <div class="post-thumbnail">
+                                                    <img src="/storage/{{ $hotel->image }}"
+                                                         alt="Hotel Image">
+                                                </div>
                                                 <div class="main-post">
                                                     <div class="entry-content">
+                                                        <h3 class="title pt-4">
+                                                            {{ $hotel->{'name_'.app()->getLocale()} }}
+                                                        </h3>
                                                         {!! $hotel->{'description_'.app()->getLocale()} !!}
                                                     </div>
                                                 </div>

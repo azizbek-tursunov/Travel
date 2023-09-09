@@ -18,7 +18,10 @@ class HotelResource extends Resource
 {
     protected static ?string $model = Hotel::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-building-office';
+
+    protected static ?string $navigationGroup = 'Partners';
+
 
     public static function form(Form $form): Form
     {
@@ -54,12 +57,12 @@ class HotelResource extends Resource
                                     ->maxLength(65535)
                                     ->columnSpanFull(),
                             ]),
-                        Tabs\Tab::make('Image')
-                            ->schema([
-                                Forms\Components\FileUpload::make('banner_image')
-                                    ->image()
-                                    ->required(),
-                            ]),
+//                        Tabs\Tab::make('Image')
+//                            ->schema([
+//                                Forms\Components\FileUpload::make('banner_image')
+//                                    ->image()
+//                                    ->required(),
+//                            ]),
                     ]),
                 Forms\Components\FileUpload::make('image')
                     ->image(),

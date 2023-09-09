@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\BannerResource\Pages;
-use App\Filament\Resources\BannerResource\RelationManagers;
-use App\Models\Banner;
+use App\Filament\Resources\LogoResource\Pages;
+use App\Filament\Resources\LogoResource\RelationManagers;
+use App\Models\Logo;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class BannerResource extends Resource
+class LogoResource extends Resource
 {
-    protected static ?string $model = Banner::class;
+    protected static ?string $model = Logo::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -23,27 +23,9 @@ class BannerResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title_uz')
+                Forms\Components\FileUpload::make('logo')
                     ->required()
-                    ->maxLength(255),
-                Forms\Components\FileUpload::make('image_uz')
-                    ->image()
-                    ->required(),
-                Forms\Components\TextInput::make('title_ru')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\FileUpload::make('image_ru')
-                    ->image()
-                    ->required(),
-                Forms\Components\TextInput::make('title_en')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\FileUpload::make('image_en')
-                    ->image()
-                    ->required(),
-                Forms\Components\FileUpload::make('banner_image')
-                    ->image()
-                    ->required(),
+                    ->imageCropAspectRatio('207:60'),
             ]);
     }
 
@@ -51,15 +33,8 @@ class BannerResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title_uz')
+                Tables\Columns\ImageColumn::make('logo')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image_uz'),
-                Tables\Columns\TextColumn::make('title_ru')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('image_ru'),
-                Tables\Columns\TextColumn::make('title_en')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('image_en'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -89,7 +64,7 @@ class BannerResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageBanners::route('/'),
+            'index' => Pages\ManageLogos::route('/'),
         ];
     }
 }

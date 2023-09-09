@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Logo extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['banner_image', 'location', 'phone', 'email'];
+    protected $fillable = [
+        'logo',
+    ];
 }

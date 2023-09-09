@@ -5,8 +5,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget about-company-widget mb-40">
-                        <a href="index.html" class="footer-logo"><img src="assets/images/logo/logo-black.png"
-                                                                      alt="Brand Logo"></a>
+                        <a href="{{ route('home') }}" class="footer-logo"><img src="/storage/{{ $logo->logo }}" alt="Logo"></a>
                         <p>
                             {!! $footer->{'about_' . app()->getLocale()} !!}
                         </p>
@@ -22,25 +21,23 @@
                         <h4 class="widget-title">Services</h4>
                         <div class="footer-nav-content">
                             <ul class="footer-nav">
-                                <li><a href="#">Caravan Soler Tent</a></li>
-                                <li><a href="#">Family Tent Camping</a></li>
-                                <li><a href="#">Classic Tent Camping</a></li>
-                                <li><a href="#">Wild Tent Camping</a></li>
-                                <li><a href="#">Bell Glamp One</a></li>
-                                <li><a href="#">Small Cabin Wood</a></li>
+                                <li><a href="{{ route('home') }}">{{ __('layout.home') }}</a></li>
+                                <li><a href="{{ route('tours') }}">{{ __('layout.tours') }}</a></li>
+                                <li><a href="{{ route('hotels') }}">{{ __('layout.hotels') }}</a></li>
+                                <li><a href="{{ route('about-us') }}">{{ __('layout.about') }}</a></li>
+                                <li><a href="{{ route('contact') }}">{{ __('layout.contact_us') }}</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget footer-newsletter-widget mb-40">
-                        <h4 class="widget-title">Newsletter</h4>
+                        <h4 class="widget-title">{{ __('layout.subscribe') }}</h4>
                         <div class="newsletter-content">
-                            <p>Felputate neque feugiat secursun
-                                blandit volutpat hendr mauris</p>
+                            <p>{{ __('layout.subscribe_text') }}</p>
                             <form>
                                 <div class="form_group">
-                                    <input type="email" class="form_control" placeholder="Email Address" required>
+                                    <input type="email" class="form_control" placeholder="Email" required>
                                     <label>
                                         <button><i class="far fa-arrow-right"></i></button>
                                     </label>
@@ -63,7 +60,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="copyright-text">
-                        <P>&copy; 2023, All Rights Reserved</P>
+                        <P>&copy; 2023, @lang('layout.all_rights_reserved')</P>
                     </div>
                 </div>
                 <div class="col-lg-6">

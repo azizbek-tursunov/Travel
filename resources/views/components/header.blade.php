@@ -8,15 +8,15 @@
             <div class="primary-menu">
                 <!--=== Site Branding ===-->
                 <div class="site-branding">
-                    <a href="index.html" class="brand-logo"><img src="assets/images/logo/logo-white.png"
+                    <a href="{{ route('home') }}" class="brand-logo"><img src="/storage/{{ $logo->logo }}"
                                                                  alt="Site Logo"></a>
                 </div>
                 <!--=== Nav Inner Menu ===-->
                 <div class="nav-menu">
                     <!--=== Mobile Logo ===-->
                     <div class="mobile-logo mb-30 d-block d-xl-none text-center">
-                        <a href="index.html" class="brand-logo"><img src="assets/images/logo/logo-black.png"
-                                                                     alt="Site Logo"></a>
+                        <a href="{{ route('home') }}" class="brand-logo"><img src="assets/images/logo/logo-black.png"
+                                                                     alt="Logo"></a>
                     </div>
                     <!--=== Main Menu ===-->
                     <nav class="main-menu">

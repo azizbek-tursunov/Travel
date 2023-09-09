@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Models\Destination;
 use App\Models\Footer;
+use App\Models\Icon;
+use App\Models\Logo;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 
@@ -32,6 +34,9 @@ class AppServiceProvider extends ServiceProvider
                     $view->with('footer', Footer::first());
                 }
             );
+
+            $logo = Logo::first();
+            view()->share('logo', $logo);
         }
     }
 }

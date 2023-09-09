@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PartnerResource\Pages;
-use App\Filament\Resources\PartnerResource\RelationManagers;
-use App\Models\Partner;
+use App\Filament\Resources\MessageResource\Pages;
+use App\Filament\Resources\MessageResource\RelationManagers;
+use App\Models\Message;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,14 +13,11 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class PartnerResource extends Resource
+class MessageResource extends Resource
 {
-    protected static ?string $model = Partner::class;
+    protected static ?string $model = Message::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
-
-    protected static ?string $navigationGroup = 'Partners';
-
+    protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-left-right';
 
     public static function form(Form $form): Form
     {
@@ -29,14 +26,14 @@ class PartnerResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('link')
+                Forms\Components\TextInput::make('email')
+                    ->email()
                     ->required()
                     ->maxLength(255),
-                Forms\Components\FileUpload::make('image')
-                    ->label('Image (165x6   0)')
-                    ->image()
-                    ->imageCropAspectRatio('165:60  ')
-                    ->required(),
+                Forms\Components\Textarea::make('message')
+                    ->required()
+                    ->maxLength(65535)
+                    ->columnSpanFull(),
             ]);
     }
 
@@ -44,10 +41,11 @@ class PartnerResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('link')
+                Tables\Columns\TextColumn::make('message')
+                    ->wrap(),
+                Tables\Columns\TextColumn::make('email')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -62,8 +60,7 @@ class PartnerResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                //
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -75,10 +72,22 @@ class PartnerResource extends Resource
             ]);
     }
 
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManagePartners::route('/'),
+            'index' => Pages\ListMessages::route('/'),
         ];
+    }
+
+    public static function canCreate(): bool
+    {
+        return false;
     }
 }

@@ -18,7 +18,10 @@ class DestinationResource extends Resource
 {
     protected static ?string $model = Destination::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-globe-asia-australia';
+
+    protected static ?string $navigationGroup = 'Tours';
+
 
     public static function form(Form $form): Form
     {
@@ -35,6 +38,8 @@ class DestinationResource extends Resource
                                     ->maxLength(65535)
                                     ->columnSpanFull(),
                                 Forms\Components\FileUpload::make('image_uz')
+                                    ->label('Image (410x275)')
+                                    ->imageCropAspectRatio('410:275')
                                     ->image()
                                     ->required(),
                             ]),
@@ -47,6 +52,8 @@ class DestinationResource extends Resource
                                     ->maxLength(65535)
                                     ->columnSpanFull(),
                                 Forms\Components\FileUpload::make('image_ru')
+                                    ->label('Image (410x275)')
+                                    ->imageCropAspectRatio('410:275')
                                     ->image()
                                     ->required(),
                             ]),
@@ -58,13 +65,9 @@ class DestinationResource extends Resource
                                     ->maxLength(65535)
                                     ->columnSpanFull(),
                                 Forms\Components\FileUpload::make('image_en')
+                                    ->label('Image (410x275)')
+                                    ->imageCropAspectRatio('410:275')
                                     ->image(),
-                            ]),
-                        Tabs\Tab::make('Image')
-                            ->schema([
-                                Forms\Components\FileUpload::make('banner_image')
-                                    ->image()
-                                    ->required(),
                             ]),
                     ])->columnSpanFull(),
             ]);

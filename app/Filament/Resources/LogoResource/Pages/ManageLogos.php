@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\BannerResource\Pages;
+namespace App\Filament\Resources\LogoResource\Pages;
 
-use App\Filament\Resources\BannerResource;
+use App\Filament\Resources\LogoResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ManageRecords;
 
-class ManageBanners extends ManageRecords
+class ManageLogos extends ManageRecords
 {
-    protected static string $resource = BannerResource::class;
+    protected static string $resource = LogoResource::class;
 
     protected function getHeaderActions(): array
     {

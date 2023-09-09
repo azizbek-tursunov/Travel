@@ -17,23 +17,31 @@ class ContactResource extends Resource
 {
     protected static ?string $model = Contact::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-phone';
+
+    protected static ?string $navigationGroup = 'Pages';
+
+    protected static ?string $label = 'Contact Page';
+
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                Forms\Components\TextInput::make('location')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('phone')
+                    ->tel()
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('email')
                     ->email()
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('message')
-                    ->required()
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
+                Forms\Components\FileUpload::make('banner_image')
+                    ->image()
+                    ->required(),
             ]);
     }
 
@@ -41,10 +49,11 @@ class ContactResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
+                Tables\Columns\ImageColumn::make('banner_image'),
+                Tables\Columns\TextColumn::make('location')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('message')
-                    ->wrap(),
+                Tables\Columns\TextColumn::make('phone')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
@@ -60,7 +69,7 @@ class ContactResource extends Resource
                 //
             ])
             ->actions([
-                //
+                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -83,11 +92,8 @@ class ContactResource extends Resource
     {
         return [
             'index' => Pages\ListContacts::route('/'),
+            'create' => Pages\CreateContact::route('/create'),
+            'edit' => Pages\EditContact::route('/{record}/edit'),
         ];
-    }
-
-    public static function canCreate(): bool
-    {
-        return false;
     }
 }

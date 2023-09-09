@@ -1,15 +1,11 @@
 <x-layout>
     <!--====== Start Breadcrumb Section ======-->
-    <section class="page-banner light-red-bg pt-170 pb-170 bg_cover" style="background-image: url(assets/images/bg/page-bg-1.jpg);">
+    <section class="page-banner light-red-bg pt-170 pb-170 bg_cover" style="background-image: url(/storage/{{ $contact->banner_image }});">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="page-banner-content text-center text-white">
                         <h1 class="page-title">Contact Us</h1>
-                        <ul class="breadcrumb-link text-white">
-                            <li><a href="index.html">Home</a></li>
-                            <li class="active">Contact Us</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -22,7 +18,7 @@
                 <div class="col-xl-7 col-lg-12">
                     <div class="contact-content-box mb-50">
                         <div class="section-title mb-45 wow fadeInUp">
-                            <h2>Ready to Travel Us <span class="thin">for Better Adventure</span></h2>
+                            <h2>Ready to Travel Us for Better Adventure</h2>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -32,8 +28,7 @@
                                     </div>
                                     <div class="text">
                                         <h4 class="title">Locations</h4>
-                                        <p>532 Main Street, 2nd Block
-                                            melbourne, Australia</p>
+                                        <p>{{ $contact->location }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -44,8 +39,7 @@
                                     </div>
                                     <div class="text">
                                         <h4 class="title">Email Us</h4>
-                                        <p><a href="mailto:support@gmail.com">support@gmail.com</a></p>
-                                        <p><a href="mailto:support@gmail.com">infovadhak.net</a></p>
+                                        <p><a href="mailto:support@gmail.com">{{ $contact->email }}</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -56,20 +50,7 @@
                                     </div>
                                     <div class="text">
                                         <h4 class="title">Hotline</h4>
-                                        <p><a href="tel:+000(123)45688">tel:+000 (123) 456 88</a></p>
-                                        <p><a href="tel:+123456789">+123456789</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="contact-icon-box mb-50 wow fadeInDown">
-                                    <div class="icon">
-                                        <i class="fal fa-link"></i>
-                                    </div>
-                                    <div class="text">
-                                        <h4 class="title">Follow Us</h4>
-                                        <p>532 Main Street, 2nd Block
-                                            melbourne, Australia</p>
+                                        <p><a href="tel:{{ $contact->phone }}">{{ $contact->phone }}</a></p>
                                     </div>
                                 </div>
                             </div>
