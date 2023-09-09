@@ -6,7 +6,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="page-banner-content text-center text-white">
-                        <h2 class="page-title">Biz bilan sayohat qiling</h2>
+                        <h2 class="page-title">@lang('index.travel_with_us')</h2>
                     </div>
                 </div>
             </div>

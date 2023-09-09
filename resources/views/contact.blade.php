@@ -5,7 +5,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="page-banner-content text-center text-white">
-                        <h1 class="page-title">Contact Us</h1>
+                        <h1 class="page-title">@lang('contact.contact_us')</h1>
                     </div>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                 <div class="col-xl-7 col-lg-12">
                     <div class="contact-content-box mb-50">
                         <div class="section-title mb-45 wow fadeInUp">
-                            <h2>Ready to Travel Us for Better Adventure</h2>
+                            <h2>@lang('contact.ready_travel')</h2>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -27,7 +27,7 @@
                                         <i class="fal fa-map-marker-alt"></i>
                                     </div>
                                     <div class="text">
-                                        <h4 class="title">Locations</h4>
+                                        <h4 class="title">@lang('contact.location')</h4>
                                         <p>{{ $contact->location }}</p>
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@
                                         <i class="fal fa-envelope-open"></i>
                                     </div>
                                     <div class="text">
-                                        <h4 class="title">Email Us</h4>
+                                        <h4 class="title">@lang('contact.email')</h4>
                                         <p><a href="mailto:support@gmail.com">{{ $contact->email }}</a></p>
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@
                                         <i class="fal fa-phone"></i>
                                     </div>
                                     <div class="text">
-                                        <h4 class="title">Hotline</h4>
+                                        <h4 class="title">@lang('contact.phone')</h4>
                                         <p><a href="tel:{{ $contact->phone }}">{{ $contact->phone }}</a></p>
                                     </div>
                                 </div>
@@ -59,22 +59,21 @@
                 </div>
                 <div class="col-xl-5 col-lg-12">
                     <div class="contact-form-wrapper mb-50">
-                        <h3 class="title">Send Us Message</h3>
-                        <p>Adipiscing magna varius imperdiet scelerisque
-                            suspendisse amet sed ridiculus turpis.</p>
+                        <h3 class="title">@lang('contact.send_message')</h3>
+                        <p>@lang('contact.send_us_message')</p>
                         <form action="{{ route('contact.store') }}" class="contact-form" method="POST">
                             @csrf
                             <div class="form_group">
-                                <input type="text" class="form_control" placeholder="Full Name" name="name" required>
+                                <input type="text" class="form_control" placeholder="@lang('contact.full_name')" name="name" required>
                             </div>
                             <div class="form_group">
-                                <input type="text" class="form_control" placeholder="Email Address" name="email" required>
+                                <input type="text" class="form_control" placeholder="@lang('contact.your_email')" name="email" required>
                             </div>
                             <div class="form_group">
-                                <textarea class="form_control" placeholder="Write Message" name="message"></textarea>
+                                <textarea class="form_control" placeholder="@lang('contact.your_message')" name="message"></textarea>
                             </div>
                             <div class="form_group">
-                                <button class="main-btn btn-green">Send message <i class="far fa-angle-double-right"></i></button>
+                                <button class="main-btn btn-green">@lang('contact.send') <i class="far fa-angle-double-right"></i></button>
                             </div>
                         </form>
                     </div>

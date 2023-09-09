@@ -52,7 +52,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-10">
                     <div class="section-title text-center mb-50">
-                        <h2>Have A Fun With Our Amazing <span class="thin">Camping Ground</span></h2>
+                        <h2>@lang('home.destination_title')</h2>
                     </div>
                 </div>
             </div>
@@ -86,7 +86,7 @@
                 <div class="col-lg-8">
                     <div class="video-content-box text-white text-md-center mb-40">
                         <h2 class="mb-30">{{ $home->{'video_text_'.app()->getLocale()} }}</h2>
-                        <a href="{{ $home->video_link }}" class="main-btn btn-green">Watch video <i class="far fa-angle-double-right"></i></a>
+                        <a href="{{ $home->video_link }}" class="main-btn btn-green">@lang('home.watch_video')<i class="far fa-angle-double-right"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -98,53 +98,6 @@
             </div>
         </div>
     </section><!--====== End Video Section ======-->
-    <!--====== Start Features Section ======-->
-    <section class="features-section pt-100 pb-35">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-4 col-md-6 col-sm-12">
-                    <div class="fancy-icon-box-two mb-55">
-                        <div class="icon-title d-flex">
-                            <div class="title">
-                                <h5 class="title">Washing Machines</h5>
-                            </div>
-                        </div>
-                        <div class="text">
-                            <p>Sit amet consectetur adipiscing elitcelerisque
-                                aenectus bibendum facilisi tempus</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-sm-12">
-                    <div class="fancy-icon-box-two mb-55">
-                        <div class="icon-title d-flex">
-                            <div class="title">
-                                <h5 class="title">Tents on Rent</h5>
-                            </div>
-                        </div>
-                        <div class="text">
-                            <p>Sit amet consectetur adipiscing elitcelerisque
-                                aenectus bibendum facilisi tempus</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-sm-12">
-                    <div class="fancy-icon-box-two mb-55">
-                        <div class="icon-title d-flex">
-                            <div class="title">
-                                <h5 class="title">Summer Camp</h5>
-                            </div>
-                        </div>
-                        <div class="text">
-                            <p>Sit amet consectetur adipiscing elitcelerisque
-                                aenectus bibendum facilisi tempus</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section><!--====== End Features Section ======-->
     <!--====== Start Accommodation Section ======-->
     <section class="accommodation-section pb-100">
         <div class="container-fluid">
@@ -158,7 +111,7 @@
                             <div class="inner-content d-flex justify-content-between">
                                 <div class="text">
                                     <h4 class="title"><a href="{{ route('showTour', ['tour' => $tour->id]) }}">{{ $tour->{'name_' . app()->getLocale()} }}</a></h4>
-                                    <a href="{{ route('showTour', ['tour' => $tour->id]) }}" class="btn-link">Ko'proq bilish<i
+                                    <a href="{{ route('showTour', ['tour' => $tour->id]) }}" class="btn-link">@lang('home.read_more')<i
                                             class="far fa-angle-double-right"></i></a>
                                 </div>
                                 <div class="icon">
@@ -188,7 +141,7 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="cta-button float-lg-end mb-35">
-                            <a href="{{ $home->CTa_link  }}" class="main-btn btn-yellow">Discover more<i
+                            <a href="{{ $home->CTa_link  }}" class="main-btn btn-yellow">@lang('home.subscribe')<i
                                     class="far fa-angle-double-right"></i></a>
                         </div>
                     </div>

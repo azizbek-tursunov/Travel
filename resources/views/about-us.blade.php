@@ -5,7 +5,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="page-banner-content text-center text-white">
-                        <h2 class="page-title">About Us</h2>
+                        <h2 class="page-title">@lang('about.about_us')</h2>
                     </div>
                 </div>
             </div>

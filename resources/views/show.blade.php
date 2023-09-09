@@ -120,7 +120,7 @@
                                         <div class="sidebar-widget-area pl-lg-40">
                                             <!--=== Category Widget ===-->
                                             <div class="sidebar-widget category-widget mb-30 wow fadeInUp">
-                                                <h5 class="widget-title">{{ __('home.package') }}</h5>
+                                                <h5 class="widget-title">@lang('layout.destinations')</h5>
                                                 <ul class="category-nav">
                                                     @foreach($destinations as $destination)
                                                         <li>
