@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Hotel extends Model
 {
@@ -20,4 +21,9 @@ class Hotel extends Model
         'link',
         'banner_image'
     ];
+
+    public function shortDescription()
+    {
+        return Str::words(strip_tags($this->{'description_'.app()->getLocale()}), 20);
+    }
 }

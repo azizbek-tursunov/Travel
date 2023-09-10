@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Destination extends Model
 {
@@ -25,5 +26,10 @@ class Destination extends Model
     public function tours()
     {
         return $this->belongsToMany(Tour::class, 'destination_tours');
+    }
+
+    public function shortDescription()
+    {
+        return Str::words(strip_tags($this->{'description_'.app()->getLocale()}), 20);
     }
 }

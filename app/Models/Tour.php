@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Tour extends Model
 {
@@ -25,6 +26,11 @@ class Tour extends Model
         'price',
         'banner_image'
     ];
+
+    public function shortDescription()
+    {
+        return Str::words(strip_tags($this->{'description_'.app()->getLocale()}), 20);
+    }
 
     public function destinations()
     {

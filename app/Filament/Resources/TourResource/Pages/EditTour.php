@@ -4,16 +4,16 @@ namespace App\Filament\Resources\TourResource\Pages;
 
 use App\Filament\Resources\TourResource;
 use Filament\Actions;
-use Filament\Resources\Pages\ManageRecords;
+use Filament\Resources\Pages\EditRecord;
 
-class ManageTours extends ManageRecords
+class EditTour extends EditRecord
 {
     protected static string $resource = TourResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\DeleteAction::make(),
         ];
     }
 }

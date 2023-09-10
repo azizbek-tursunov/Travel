@@ -1,6 +1,7 @@
 <x-layout>
     <!--====== Start Breadcrumb Section ======-->
-    <section class="page-banner light-red-bg pt-170 pb-170 bg_cover" style="background-image: url(/storage/{{ $about->banner_image }});">
+    <section class="page-banner light-red-bg pt-170 pb-170 bg_cover"
+             style="background-image: url(/storage/{{ $about->banner_image }});">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
@@ -73,9 +74,10 @@
                 @foreach($partners as $partner)
                     <div class="single-partner-item">
                         <div class="partner-img">
-                            <a href="{{ $partner->link }}"><img src="/storage/{{ $partner->image }}" alt="Partner Image"></a>
+                            <a href="{{ $partner->link }}"><img src="/storage/{{ $partner->image }}"
+                                                                alt="Partner Image"></a>
                         </div>
-                    <span class="justify-center">
+                        <span class="justify-center">
                         {{ $partner->name }}
                     </span>
                     </div>

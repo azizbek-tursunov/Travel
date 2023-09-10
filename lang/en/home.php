@@ -5,4 +5,5 @@ return [
     'watch_video' => 'Watch video',
     'read_more' => 'Read more',
     'subscribe' => 'Subscribe',
+    'choose_tour' => 'Choose the tour package that suits you',
 ];

@@ -83,28 +83,30 @@
              style="background-image: url(/storage/{{ $home->video_background }});">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="video-content-box text-white text-md-center mb-40">
                         <h2 class="mb-30">{{ $home->{'video_text_'.app()->getLocale()} }}</h2>
                         <a href="{{ $home->video_link }}" class="main-btn btn-green">@lang('home.watch_video')<i class="far fa-angle-double-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="play-box text-lg-end text-md-center mb-40">
-                        <a href="{{ $home->video_link }}" class="video-popup"><i
-                                class="fas fa-play"></i></a>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section><!--====== End Video Section ======-->
     <!--====== Start Accommodation Section ======-->
     <section class="accommodation-section pb-100">
         <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-10">
+                    <div class="section-title text-center mb-50 mt-60">
+                        <h2>@lang('home.choose_tour')</h2>
+                    </div>
+                </div>
+            </div>
             <div class="service-slider-one">
 
                 @foreach($tours as $tour)
-                <div class="single-service-item-four">
+                <div class="single-service-item-four pt-2">
                     <div class="img-holder">
                         <img src="/storage/{{ $tour->{'image_' . app()->getLocale()} }}" alt="Service Image">
                         <div class="hover-content">

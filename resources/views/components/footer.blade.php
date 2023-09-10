@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget footer-nav-widget pl-lg-20 mb-40">
-                        <h4 class="widget-title">Services</h4>
+                        <h4 class="widget-title">@lang('layout.sections')</h4>
                         <div class="footer-nav-content">
                             <ul class="footer-nav">
                                 <li><a href="{{ route('home') }}">{{ __('layout.home') }}</a></li>

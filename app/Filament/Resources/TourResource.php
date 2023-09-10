@@ -40,10 +40,6 @@ class TourResource extends Resource
                                     ->required()
                                     ->maxLength(65535)
                                     ->columnSpanFull(),
-                                Forms\Components\TextInput::make('price')
-                                    ->required()
-                                    ->numeric()
-                                    ->prefix('$'),
                                 Forms\Components\FileUpload::make('image_uz')
                                     ->image()
                                     ->required(),
@@ -76,11 +72,15 @@ class TourResource extends Resource
                                 Forms\Components\FileUpload::make('image_en')
                                     ->image(),
                             ]),
-                        Tabs\Tab::make('Image')
+                        Tabs\Tab::make('Addition')
                         ->schema([
                             Forms\Components\FileUpload::make('banner_image')
                                 ->image()
                                 ->required(),
+                            Forms\Components\TextInput::make('price')
+                                    ->required()
+                                    ->numeric()
+                                    ->prefix('$'),
                         ]),
                     ])->columnSpanFull(),
                 Forms\Components\CheckboxList::make('destinations')
@@ -110,6 +110,7 @@ class TourResource extends Resource
                 Tables\Columns\TextColumn::make('price')
                     ->money()
                     ->sortable(),
+                Tables\Columns\ImageColumn::make('banner_image'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -124,7 +125,6 @@ class TourResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -136,10 +136,19 @@ class TourResource extends Resource
             ]);
     }
 
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageTours::route('/'),
+            'index' => Pages\ListTours::route('/'),
+            'create' => Pages\CreateTour::route('/create'),
+            'edit' => Pages\EditTour::route('/{record}/edit'),
         ];
     }
 }

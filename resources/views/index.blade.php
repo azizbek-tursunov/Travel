@@ -25,17 +25,12 @@
                                         <img src="/storage/{{ $tour->{'image_'.app()->getLocale()} }}" alt="Post Image">
                                     </div>
                                     <div class="entry-content">
-{{--                                        <div class="post-meta">--}}
-{{--                                            <ul>--}}
-{{--                                                <li><span><a href="#"><i--}}
-{{--                                                                class="far fa-calendar-alt"></i> November 23,2022</a></span>--}}
-{{--                                                </li>--}}
-{{--                                            </ul>--}}
-{{--                                        </div>--}}
+{{--
 {{--                                        TODO: shu yerga ozgina descriptiondan chiqarib qo'yish kerak   --}}
                                         <h3 class="title"><a
                                                 href="{{ route('showTour', ['tour' => $tour->id]) }}">{{ $tour->{'direction_'.app()->getLocale()} }}</a>
                                         </h3>
+                                        <p class="post-excerpt">{{ $tour->shortDescription() }}</p>
                                         <a href="{{ route('showTour', ['tour' => $tour->id]) }}" class="btn-link">ko'proq
                                             malumot olish<i class="far fa-angle-double-right"></i></a>
                                     </div>
@@ -53,6 +48,7 @@
                                         <h3 class="title"><a
                                                 href="{{ route('showHotel', ['hotel' => $hotel->id]) }}">{{ $hotel->{'name_'.app()->getLocale()} }}</a>
                                         </h3>
+                                        <p class="post-excerpt">{{ $hotel->shortDescription() }}</p>
                                         <a href="{{ route('showHotel', ['hotel' => $hotel->id]) }}" class="btn-link">
                                             ko'proq malumot olish<i class="far fa-angle-double-right"></i>
                                         </a>

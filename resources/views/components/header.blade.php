@@ -15,8 +15,7 @@
                 <div class="nav-menu">
                     <!--=== Mobile Logo ===-->
                     <div class="mobile-logo mb-30 d-block d-xl-none text-center">
-                        <a href="{{ route('home') }}" class="brand-logo"><img src="assets/images/logo/logo-black.png"
-                                                                     alt="Logo"></a>
+                        <a href="{{ route('home') }}" class="brand-logo"><img src="/storage/{{ $logo->logo }}" alt="Logo"></a>
                     </div>
                     <!--=== Main Menu ===-->
                     <nav class="main-menu">
@@ -38,6 +37,7 @@
                                 <a href="{{ route('hotels') }}">{{ __('layout.hotels') }}</a>
                             </li>
                             <li class="menu-item"><a href="{{ route('about-us') }}">{{ __('layout.about') }}</a></li>
+                            <li class="menu-item"><a href="{{ route('contact') }}">{{ __('layout.contact_us') }}</a></li>
                         </ul>
                     </nav>
                 </div>

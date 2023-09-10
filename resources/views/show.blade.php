@@ -81,7 +81,7 @@
                     @elseif(isset($hotel))
                         <!--====== Start Breadcrumb Section ======-->
                         <section class="page-banner light-red-bg pt-170 pb-170 bg_cover"
-                                 style="background-image: url(/storage/{{ $hotel->banner_image }});">
+                                 style="background-image: url(/assets/images/service/hotel-banner.jpg);">
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-10">

@@ -20,7 +20,7 @@ class HomePageResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-home';
 
-    protected static  ?string $navigationGroup = 'Pages';
+    protected static ?string $navigationGroup = 'Pages';
 
     public static function form(Form $form): Form
     {
@@ -28,6 +28,33 @@ class HomePageResource extends Resource
             ->schema([
                 Tabs::make('Label')
                     ->tabs([
+                        Tabs\Tab::make('Banner')
+                            ->schema([
+                                Forms\Components\Repeater::make('banner')
+                                    ->schema([
+                                        Forms\Components\TextInput::make('title_uz')
+                                            ->required()
+                                            ->maxLength(255),
+                                        Forms\Components\FileUpload::make('image_uz')
+                                            ->label('Image UZ (1920x950)')
+                                            ->image()
+                                            ->required(),
+                                        Forms\Components\TextInput::make('title_ru')
+                                            ->required()
+                                            ->maxLength(255),
+                                        Forms\Components\FileUpload::make('image_ru')
+                                            ->label('Image RU (1920x950)')
+                                            ->image()
+                                            ->required(),
+                                        Forms\Components\TextInput::make('title_en')
+                                            ->required()
+                                            ->maxLength(255),
+                                        Forms\Components\FileUpload::make('image_en')
+                                            ->label('Image EN (1920x950)')
+                                            ->image()
+                                            ->required(),
+                                    ]),
+                            ]),
                         Tabs\Tab::make('About UZ')
                             ->schema([
                                 Forms\Components\TextInput::make('about_uz')
@@ -73,30 +100,6 @@ class HomePageResource extends Resource
                                     ->imageResizeTargetWidth('330')
                                     ->imageResizeTargetHeight('535')
                                     ->required(),
-                                Forms\Components\Repeater::make('banner')
-                                    ->schema([
-                                        Forms\Components\TextInput::make('title_uz')
-                                            ->required()
-                                            ->maxLength(255),
-                                        Forms\Components\FileUpload::make('image_uz')
-                                            ->label('Image UZ (1920x950)')
-                                            ->image()
-                                            ->required(),
-                                        Forms\Components\TextInput::make('title_ru')
-                                            ->required()
-                                            ->maxLength(255),
-                                        Forms\Components\FileUpload::make('image_ru')
-                                            ->label('Image RU (1920x950)')
-                                            ->image()
-                                            ->required(),
-                                        Forms\Components\TextInput::make('title_en')
-                                            ->required()
-                                            ->maxLength(255),
-                                        Forms\Components\FileUpload::make('image_en')
-                                            ->label('Image EN (1920x950)')
-                                            ->image()
-                                            ->required(),
-                                    ]),
                             ]),
                         Tabs\Tab::make('Video')
                             ->schema([
